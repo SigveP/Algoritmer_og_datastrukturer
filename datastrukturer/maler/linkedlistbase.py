@@ -4,8 +4,11 @@ class LinkedListBase:
         self.end = None
         self.length = -1
 
+    def __len__(self):
+        return self.length + 1
+
     def __getitem__(self, key: int):
-        return self.get(key).value
+        return self.get(key + 1).value
 
     def __iter__(self):
         self.iternode = self.start
