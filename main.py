@@ -1,5 +1,5 @@
 from datastrukturer import *
-from algoritmer import *
+import algoritmer.binary_search as bs
 
 """ 
 tree = Tree(0)
@@ -47,7 +47,7 @@ test.dequeue()
 print(test.peek())
 print(test)
  """
-
+""" 
 ht = HashTable()
 ht.add(141, "tekst 1")
 ht.add(298, "tekst 2")
@@ -65,3 +65,8 @@ print(ht.table[0])
 print(ht['potet'])
 print(ht[8])
 print(ht['minnepinne'])
+ """
+
+liste = LinkedList(1, 234, 235, 363, 457, 458, 568)
+print(bs.iterative(liste, 438))
+print(bs.recursive(liste, 363))
