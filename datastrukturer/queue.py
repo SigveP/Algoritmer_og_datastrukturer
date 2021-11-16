@@ -4,9 +4,9 @@ from .maler import OneDirNode as Node
 
 class Queue(LinkedListBase):
     def __init__(self, *values) -> None:
-        self.start = Node(values[0])
-        self.end = self.start
-        self.length = 0
+        self.start = None
+        self.end = None
+        self.length = -1
 
         for value in values:
             self.enqueue(value)

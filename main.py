@@ -1,19 +1,8 @@
+from random import randint
 from datastrukturer import *
-import algoritmer.binary_search as bs
+from datastrukturer.sortering import insertionsort
 
-""" 
-tree = Tree(0)
-tree.add(tree.root, 1)
-tree.add(tree.root, 2)
-tree.add(tree.root, 3)
-tree.add(tree.root.branches[0], 4)
-tree.add(tree.root.branches[0], 5)
-tree.add(tree.root.branches[2], 6)
-tree.add(tree.root.branches[2], 7)
-tree.add(tree.root.branches[2].branches[0], 8)
-tree.add(tree.root.branches[2].branches[1], 9)
-print(tree.getDict())
-
+"""
 liste = LinkedList()
 liste.append(1)
 liste.append(3)
@@ -66,7 +55,25 @@ print(ht['potet'])
 print(ht[8])
 print(ht['minnepinne'])
  """
-
+""" 
 liste = LinkedList(1, 234, 235, 363, 457, 458, 568)
-print(bs.iterative(liste, 438))
-print(bs.recursive(liste, 363))
+print(binarysearch.iterative(liste, 458))
+print(binarysearch.recursive(liste, 363))
+ """
+""" 
+from datastrukturer.maler.nodes import TreeNode
+tree = BinaryTree(1)
+tree.root.left = TreeNode(2)
+tree.root.left.left = TreeNode(4)
+tree.root.left.right = TreeNode(5)
+tree.root.right = TreeNode(3)
+print(preorder.iterative(tree.root))  # 1 2 4 5 3 
+print(preorder.recursive(tree.root))  # 1 2 4 5 3 
+print(inorder.iterative(tree.root))  # 4 2 5 1 3 
+print(inorder.recursive(tree.root))  # 4 2 5 1 3 
+print(postorder.iterative(tree.root))  # 4 5 2 3 1
+print(postorder.recursive(tree.root))  # 4 5 2 3 1
+ """
+l = [randint(111, 999) for i in range(20)]
+print(l)
+print(insertionsort.iterative(l))
