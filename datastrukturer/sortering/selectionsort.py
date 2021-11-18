@@ -4,9 +4,7 @@ def iterative(array: list) -> list:
         for i2 in range(i1, len(array)):
             if array[i2] < array[minindex]:
                 minindex = i2
-        temp = array[i1]
-        array[i1] = array[minindex]
-        array[minindex] = temp
+        array[i1], array[minindex] = array[minindex], array[i1]
     return array
 
 
@@ -15,9 +13,7 @@ def recursive(array: list, i: int = 0) -> list:
     for x in range(i, len(array)):
         if array[x] < array[minindex]:
             minindex = x
-    temp = array[i]
-    array[i] = array[minindex]
-    array[minindex] = temp
+    array[i], array[minindex] = array[minindex], array[i]
     if i < len(array)-1:
         array = recursive(array, i + 1)
     return array
