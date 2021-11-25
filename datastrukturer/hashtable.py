@@ -3,7 +3,7 @@ from .linkedlist import LinkedList
 
 class HashTable:
     def __init__(self) -> None:
-        self.table = [i for i in range(8)]
+        self.table = [False for i in range(8)]
 
     def hash(self, key) -> int:
         key = hash(key)
@@ -20,7 +20,7 @@ class HashTable:
         elif isinstance(self.table[table_index], tuple):
             self.convert(table_index)
             self.table[table_index].append((key, value))
-        else:
+        elif self.table[table_index] == False:
             self.table[table_index] = (key, value)
 
     def get(self, key):
@@ -57,3 +57,40 @@ class HashTable:
 
     def __setitem__(self, key, value):
         self.setvalue(key, value)
+
+    def __iter__(self):
+        self.iter = [0, 0]
+        return self
+
+    def __next__(self):
+        value = ()
+        if self.iter[0] > 8:
+            raise StopIteration
+        for i in self.table[self.iter[0]:]:
+            if i == False:
+                self.iter[0] += 1
+                self.iter[1] = 0
+                continue
+            elif isinstance(i, LinkedList):
+                if self.iter[1] > len(i) - 1:
+                    self.iter[0] += 1
+                    self.iter[1] = 0
+                    continue
+                else:
+                    value = i[self.iter[1]]
+                    self.iter[1] += 1
+                    break
+            else:
+                value = i
+                self.iter[0] += 1
+                self.iter[1] = 0
+                break
+        if value == ():
+            raise StopIteration
+        return value
+
+    def __len__(self):
+        i = 0
+        for j in self:
+            i += 1
+        return i
