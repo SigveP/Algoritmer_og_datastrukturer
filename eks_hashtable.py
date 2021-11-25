@@ -3,7 +3,7 @@ from enum import Enum
 import tkinter as tk
 
 
-def load_data(file: str) -> HashTable:
+def load(file: str) -> HashTable:
     ht = HashTable()
     try:
         with open(file, 'r', encoding='utf-8') as f:
@@ -33,7 +33,7 @@ class Window(tk.Tk):
         self.title('eks_hashtable')
         self.minsize(300, 100)
 
-        self.hashtable = load_data('eks_data/eks_hashtable_data')
+        self.hashtable = load('eks_data/eks_hashtable_data')
 
         self.buttona = tk.Button()  # add
         self.buttonb = tk.Button()  # update value
