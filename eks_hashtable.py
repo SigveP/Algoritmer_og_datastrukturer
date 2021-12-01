@@ -1,3 +1,11 @@
+""" 
+EKSEMPEL HashTable
+
+I dette eksempelet lar jeg egentlig bare brukeren
+gjøre hva de vil med en HashTable, den blir kjørt
+i et vindu og kan også lagres, tilfelle de vil 
+fortsette på den senere.
+"""
 from datastrukturer import HashTable
 from enum import Enum
 import tkinter as tk

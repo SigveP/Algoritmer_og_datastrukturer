@@ -1,3 +1,12 @@
+""" 
+EKSEMPEL sortering og binærsøk
+
+I dette eksempelet heter jeg et felt fra whiskyhunter
+sin API, lar brukeren gjette hva som er i feltet og
+hvilke sortering funksjon de vil bruke.
+Kanskje ikke det mest praktiske eksempelet, men den
+viser at sorteringene og binærsøket virker.
+"""
 from random import randint
 from datastrukturer.sortering import *
 import datastrukturer.binarysearch as bins

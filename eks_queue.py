@@ -1,3 +1,13 @@
+""" 
+EKSEMPEL queue
+
+I dette eksempelet viser jeg hvordan man
+kan bruke Queue til å lage en udødlig og
+lett versjon av snake som jeg kaller meitemark.
+Queue blir brukt til kroppen til marken, bruker
+enqueue da jeg legger til en ny del og dequeue
+da den ikke blir lenger av å bevege seg.
+"""
 from datastrukturer import Queue
 from os import system
 from time import sleep

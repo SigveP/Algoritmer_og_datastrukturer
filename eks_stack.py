@@ -1,3 +1,18 @@
+""" 
+EKSEMPEL Stack
+
+I dette eksemplet bruker jeg Stack(klassen) til
+å holde pekere til vinduene som finnes, så når 
+Stacken bruker pop() skal det nyeste vinduet bli
+borte for det ikke har noen peker. 
+Funker egentlig ikke sånn for 
+PyQt6.QtWidgets.QApplication har pekere til 
+alle vinduene, burde tenkt på det før jeg lagde
+eksempelet.
+Men syntes det viser hvordan man kan bruke Stack 
+selv om jeg valgte litt feil med hva jeg skulle 
+ha en peker til.
+"""
 from datastrukturer import Stack
 from PyQt6.QtWidgets import (
     QApplication,
